@@ -1,6 +1,6 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -149,12 +149,12 @@ app.get('/health', (req, res) => {
 });
 
 // 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({
-    success: false,
-    message: 'Endpoint not found'
-  });
-});
+// app.use('*', (req, res) => {
+//   res.status(404).json({
+//     success: false,
+//     message: 'Endpoint not found'
+//   });
+// });
 
 // Error handling middleware
 app.use((err, req, res, next) => {
